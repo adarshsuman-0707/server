@@ -1,0 +1,3 @@
+query parameter and path parameter
+
+localhost:2000 yh path parameter hai 

@@ -3,23 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/crud.css">
     <title>Document</title>
 </head>
 <body>
-    <h1> Crud</h1>
+    <div class="container">
+    <nav><h1 align="center"> Crud</h1></nav>
     <% for(let i of comments) { %>
+        <div class="box">
 <h2>id: <%= i.id %></h2>
 <h2> name : <%= i.username %></h2>
 <h2> comment : <%= i.comment %></h2>
-<button onclick="find()" > edit</button>
-    
-    <% } %>
-
-    <script>
-    const find=()=>{
-        comments.map()
-    }
-    </script>
-    
+<a href="/blog/<%= i.id %>" >show</a>  </div>  <% } %>
+    </div>
 </body>
 </html>

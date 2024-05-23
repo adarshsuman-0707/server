@@ -35,10 +35,14 @@ let comments = [
 app.get('/blog',(req,res)=>{
     res.render('crud',{comments})
 })
+// <------------------------------------------------------->
 
+
+//New data ke liye 
 app.get('/blog/new',(req,res)=>{
     res.render('new')
 })
+
 app.post('/comment',(req,res)=>{
    let {username,comment} =req.body;
 console.log(req.body);
@@ -46,6 +50,7 @@ console.log(req.body);
     res.redirect('/blog') // its use for redirect rhe main file
 
 })
+// <------------------------------------------------------->
 
 //  edit ke liye 
 
@@ -67,7 +72,15 @@ data.comment=comment
    res.redirect('/blog')
 })
 
+// <------------------------------------------------------->
+// delete ke liye
+app.delete('/blog/:id',(req,res)=>{
+    let {id} =req.params;
+    comments=comments.filter(comment=>comment.id!=id)
+    res.redirect('/blog')
+})
 
+// <------------------------------------------------------->
 
 // app.post('/update',(req,res)=>{
 //     let {username,comment,id} =req.body;
